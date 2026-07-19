@@ -1,0 +1,127 @@
+/* =====================================================
+   BASE.CSS — design tokens, resets, typography, layout
+   Edit colours/fonts here and they apply across every page.
+===================================================== */
+
+:root{
+  /* ---- Core palette ---- */
+  --ink:            #2b241f;   /* main text */
+  --ink-soft:       #5c5148;   /* secondary text */
+  --paper:          #faf6f0;   /* page background, off-white */
+  --paper-deep:     #f2ebe1;   /* card background */
+  --line:           rgba(43,36,31,0.14);
+
+  --terracotta:      #b5673f;  /* accent for buttons/eyebrows */
+  --terracotta-deep: #96502e;
+
+  /* ---- Bride theme ---- */
+  --bride-bg:         #fbf0f1;
+  --bride-accent:     #c05d72;
+  --bride-accent-deep:#9c4457;
+  --bride-line:       rgba(192,93,114,0.28);
+
+  /* ---- Groom theme ---- */
+  --groom-bg:          #eef3f7;
+  --groom-accent:      #4c7ea3;
+  --groom-accent-deep: #385f7c;
+  --groom-line:        rgba(76,126,163,0.28);
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', 'Noto Serif Bengali', serif;
+  --font-body:    'Work Sans', 'Noto Sans Bengali', sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:var(--font-display);
+  font-weight:500;
+  letter-spacing:-0.01em;
+  margin:0;
+}
+a{ color:inherit; }
+img{ display:block; max-width:100%; }
+ul{ margin:0; }
+
+.wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+.eyebrow{
+  font-family:var(--font-body);
+  text-transform:uppercase;
+  letter-spacing:0.14em;
+  font-size:12px;
+  font-weight:600;
+  color:var(--terracotta-deep);
+}
+
+/* ---- Language toggle ----
+   Default language shown: Bangla (lang-bn). English is hidden
+   until <body> gets class "show-en".
+*/
+.lang-bn{ display:inline; }
+.lang-en{ display:none; }
+body.show-en .lang-bn{ display:none; }
+body.show-en .lang-en{ display:inline; }
+
+.lang-switch{
+  display:inline-flex; background:var(--paper-deep); border:1px solid var(--line);
+  border-radius:100px; padding:3px; font-size:12px; font-weight:600;
+}
+.lang-switch button{
+  border:none; background:transparent; padding:6px 14px; border-radius:100px;
+  cursor:pointer; color:var(--ink-soft); font-family:var(--font-body);
+}
+.lang-switch button.active{ background:var(--ink); color:var(--paper); }
+
+/* ---- Betel-leaf (paan) signature motif, used as brand mark & divider ---- */
+.paan{ width:22px; height:22px; display:inline-block; vertical-align:middle; opacity:0.9; }
+.divider{ display:flex; align-items:center; gap:14px; margin:18px 0 30px; }
+.divider .rule{ height:1px; background:var(--line); flex:1; }
+
+/* ---- Buttons ---- */
+.btn-wa{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--ink); color:var(--paper);
+  padding:11px 20px; border-radius:100px;
+  font-size:14px; font-weight:500; text-decoration:none;
+  transition:transform .2s ease, background .2s ease;
+  border:none; cursor:pointer;
+}
+.btn-wa:hover{ background:var(--terracotta-deep); transform:translateY(-1px); }
+.btn-wa svg{ width:16px; height:16px; flex:none; }
+
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:8px;
+  border:1px solid var(--line); padding:11px 20px; border-radius:100px;
+  font-size:14px; text-decoration:none; color:var(--ink);
+}
+
+/* ---- Floating WhatsApp button (all pages) ---- */
+.float-wa{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  background:#2f7d5c; color:#fff; border-radius:100px;
+  padding:14px 20px; display:flex; align-items:center; gap:9px;
+  text-decoration:none; font-size:14px; font-weight:500;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+}
+.float-wa svg{ width:18px; height:18px; }
+
+/* ---- Section spacing helpers ---- */
+.section{ padding:80px 0; }
+.section-tight{ padding:60px 0; }
+.section-head{ max-width:640px; margin-bottom:36px; }
+.section-head h1, .section-head h2{ font-size:clamp(28px,4vw,38px); margin:10px 0 12px; }
+.section-head p{ color:var(--ink-soft); font-size:15.5px; }
+
+@media (max-width:760px){
+  .section{ padding:56px 0; }
+}
