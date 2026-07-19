@@ -19,7 +19,7 @@ footer.site-footer{ background:var(--ink); color:rgba(250,246,240,0.75); padding
 }
 .footer-col ul{ list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; }
 .footer-col a{ text-decoration:none; color:rgba(250,246,240,0.82); font-size:14px; }
-.footer-col a:hover{ color:#e0b08e; }
+.footer-col a:hover{ color:#e2a9b4; }
 
 .foot-bottom{
   border-top:1px solid rgba(250,246,240,0.14); padding-top:20px; font-size:13px;

@@ -1,0 +1,80 @@
+/* =====================================================
+   PRODUCTS.CSS — category hub pages + product grid/detail pages
+===================================================== */
+
+/* ---- Category hub (e.g. Chinipan Dala landing: choose Bride/Groom) ---- */
+.side-picker{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+@media (max-width:760px){ .side-picker{ grid-template-columns:1fr; } }
+
+.side-picker-card{
+  display:block; text-decoration:none; color:var(--ink);
+  border-radius:22px; overflow:hidden; position:relative;
+  border:1px solid var(--line);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.side-picker-card:hover{ transform:translateY(-5px); box-shadow:0 26px 50px -20px rgba(33,26,22,0.3); }
+.side-picker-card .sp-figure{ aspect-ratio:5/4; overflow:hidden; }
+.side-picker-card .sp-figure img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.side-picker-card:hover .sp-figure img{ transform:scale(1.05); }
+.side-picker-card .sp-body{ padding:24px; }
+.side-picker-card.bride .sp-body{ background:var(--bride-bg); }
+.side-picker-card.groom .sp-body{ background:var(--groom-bg); }
+.side-picker-card h3{ font-size:23px; margin-bottom:6px; }
+.side-picker-card p{ font-size:14px; color:var(--ink-soft); margin:0 0 14px; }
+.side-picker-card .sp-cta{
+  display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:700;
+}
+.side-picker-card.bride .sp-cta{ color:var(--bride-accent-deep); }
+.side-picker-card.groom .sp-cta{ color:var(--groom-accent-deep); }
+
+/* ---- Product page hero banner (bride/groom/neutral themed) ---- */
+.product-hero{ padding:54px 0 20px; }
+.product-hero.bride{ background:var(--bride-bg); }
+.product-hero.groom{ background:var(--groom-bg); }
+.product-hero.neutral{ background:var(--paper-deep); }
+.product-hero .eyebrow.bride{ color:var(--bride-accent-deep); }
+.product-hero .eyebrow.groom{ color:var(--groom-accent-deep); }
+.product-hero .eyebrow.neutral{ color:var(--wine); }
+.product-hero h1{ font-size:clamp(28px,5vw,42px); margin:10px 0 12px; }
+.product-hero p{ color:var(--ink-soft); font-size:15px; max-width:60ch; }
+
+/* ---- Product grid ---- */
+.product-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:10px;
+}
+@media (max-width:960px){ .product-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:640px){ .product-grid{ grid-template-columns:1fr; } }
+
+.product-card{
+  background:var(--paper); border:1px solid var(--line); border-radius:18px; overflow:hidden;
+  display:flex; flex-direction:column;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.product-card:hover{ transform:translateY(-4px); box-shadow:0 20px 40px -20px rgba(33,26,22,0.25); }
+.product-card .p-figure{ aspect-ratio:1/1; overflow:hidden; }
+.product-card .p-figure img{ width:100%; height:100%; object-fit:cover; }
+.product-card .p-body{ padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.product-card h3{ font-size:17px; line-height:1.3; }
+.product-card p.desc{ font-size:13.5px; color:var(--ink-soft); margin:0; flex:1; }
+.product-card .p-price{ font-family:var(--font-display); font-weight:700; font-size:18px; }
+.product-card .p-price.bride{ color:var(--bride-accent-deep); }
+.product-card .p-price.groom{ color:var(--groom-accent-deep); }
+.product-card .p-price.neutral{ color:var(--wine); }
+.product-card .p-price .from{ font-family:var(--font-body); font-weight:600; font-size:11.5px; color:var(--ink-soft); display:block; text-transform:uppercase; letter-spacing:0.06em; }
+
+.p-order-btn{
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  padding:10px 16px; border-radius:100px; font-size:13.5px; font-weight:700;
+  text-decoration:none; color:#fff; margin-top:6px;
+}
+.p-order-btn.bride{ background:var(--bride-accent-deep); }
+.p-order-btn.groom{ background:var(--groom-accent-deep); }
+.p-order-btn.neutral{ background:var(--wine); }
+.p-order-btn svg{ width:14px; height:14px; }
+
+.price-note{
+  margin-top:30px; font-size:13px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:20px;
+}
+
+.back-link{ display:inline-flex; align-items:center; gap:6px; font-size:13.5px; font-weight:700; text-decoration:none; color:var(--ink-soft); margin-bottom:20px; }
+.back-link:hover{ color:var(--wine); }

@@ -26,21 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
-  /* ---- Bride / Groom toggle (homepage) ---- */
-  document.querySelectorAll('.side-toggle').forEach(toggle => {
-    const group = toggle.dataset.group;
-    toggle.querySelectorAll('button').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const side = btn.dataset.side;
-        toggle.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.querySelectorAll(`.side-panel[data-group="${group}"]`).forEach(p => {
-          p.classList.toggle('visible', p.dataset.side === side);
-        });
-      });
-    });
-  });
-
   /* ---- FAQ accordion (homepage) ---- */
   document.querySelectorAll('.faq-item').forEach(item => {
     const q = item.querySelector('.faq-q');

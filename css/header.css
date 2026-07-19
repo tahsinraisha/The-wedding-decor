@@ -21,7 +21,7 @@ header.site-header{
 
 nav.links{ display:flex; align-items:center; gap:24px; font-size:14px; }
 nav.links a{ text-decoration:none; color:var(--ink-soft); transition:color .2s; white-space:nowrap; }
-nav.links a:hover, nav.links a.current{ color:var(--terracotta-deep); }
+nav.links a:hover, nav.links a.current{ color:var(--wine); }
 
 .nav-right{ display:flex; align-items:center; gap:14px; }
 

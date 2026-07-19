@@ -4,50 +4,58 @@
 ===================================================== */
 
 :root{
-  /* ---- Core palette ---- */
-  --ink:            #2b241f;   /* main text */
+  /* ---- Core palette (deep, premium — no gold) ---- */
+  --ink:            #211a16;   /* near-black warm ink, main text */
   --ink-soft:       #5c5148;   /* secondary text */
   --paper:          #faf6f0;   /* page background, off-white */
   --paper-deep:     #f2ebe1;   /* card background */
   --line:           rgba(43,36,31,0.14);
 
-  --terracotta:      #b5673f;  /* accent for buttons/eyebrows */
-  --terracotta-deep: #96502e;
+  --terracotta:      #b5673f;  /* secondary accent */
+  --terracotta-deep: #8c4a2a;
+
+  --wine:            #6e2438;  /* primary premium accent — deep wine/maroon */
+  --wine-deep:        #521a2a;
 
   /* ---- Bride theme ---- */
   --bride-bg:         #fbf0f1;
-  --bride-accent:     #c05d72;
-  --bride-accent-deep:#9c4457;
-  --bride-line:       rgba(192,93,114,0.28);
+  --bride-accent:     #b1445e;
+  --bride-accent-deep:#8c2f47;
+  --bride-line:       rgba(177,68,94,0.3);
 
   /* ---- Groom theme ---- */
-  --groom-bg:          #eef3f7;
-  --groom-accent:      #4c7ea3;
-  --groom-accent-deep: #385f7c;
-  --groom-line:        rgba(76,126,163,0.28);
+  --groom-bg:          #eaf1f7;
+  --groom-accent:      #2f6690;
+  --groom-accent-deep: #1f4a6b;
+  --groom-line:        rgba(47,102,144,0.3);
 
   /* ---- Type ---- */
   --font-display: 'Fraunces', 'Noto Serif Bengali', serif;
-  --font-body:    'Work Sans', 'Noto Sans Bengali', sans-serif;
+  --font-body:    'Manrope', 'Noto Sans Bengali', sans-serif;
 }
 
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; }
 body{
   margin:0;
-  background:var(--paper);
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(110,36,56,0.05), transparent 60%),
+    radial-gradient(1000px 500px at 100% 10%, rgba(181,103,63,0.06), transparent 55%),
+    var(--paper);
   color:var(--ink);
   font-family:var(--font-body);
-  font-weight:400;
+  font-weight:500;
   line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
 h1,h2,h3,.display{
   font-family:var(--font-display);
-  font-weight:500;
-  letter-spacing:-0.01em;
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.1;
   margin:0;
 }
+h1{ font-weight:800; }
 a{ color:inherit; }
 img{ display:block; max-width:100%; }
 ul{ margin:0; }
@@ -57,10 +65,10 @@ ul{ margin:0; }
 .eyebrow{
   font-family:var(--font-body);
   text-transform:uppercase;
-  letter-spacing:0.14em;
+  letter-spacing:0.16em;
   font-size:12px;
-  font-weight:600;
-  color:var(--terracotta-deep);
+  font-weight:700;
+  color:var(--wine);
 }
 
 /* ---- Language toggle ----
@@ -91,19 +99,22 @@ body.show-en .lang-en{ display:inline; }
 .btn-wa{
   display:inline-flex; align-items:center; gap:8px;
   background:var(--ink); color:var(--paper);
-  padding:11px 20px; border-radius:100px;
-  font-size:14px; font-weight:500; text-decoration:none;
-  transition:transform .2s ease, background .2s ease;
+  padding:13px 24px; border-radius:100px;
+  font-size:14.5px; font-weight:700; text-decoration:none;
+  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
   border:none; cursor:pointer;
+  box-shadow:0 8px 22px -8px rgba(33,26,22,0.45);
 }
-.btn-wa:hover{ background:var(--terracotta-deep); transform:translateY(-1px); }
+.btn-wa:hover{ background:var(--wine); transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(110,36,56,0.5); }
 .btn-wa svg{ width:16px; height:16px; flex:none; }
 
 .btn-ghost{
   display:inline-flex; align-items:center; gap:8px;
-  border:1px solid var(--line); padding:11px 20px; border-radius:100px;
-  font-size:14px; text-decoration:none; color:var(--ink);
+  border:1.5px solid var(--line); padding:12px 24px; border-radius:100px;
+  font-size:14.5px; font-weight:700; text-decoration:none; color:var(--ink);
+  transition:border-color .2s ease;
 }
+.btn-ghost:hover{ border-color:var(--wine); color:var(--wine); }
 
 /* ---- Floating WhatsApp button (all pages) ---- */
 .float-wa{

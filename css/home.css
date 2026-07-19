@@ -7,7 +7,7 @@
 .hero .wrap{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center; }
 @media (max-width:900px){ .hero .wrap{ grid-template-columns:1fr; } }
 .hero h1{ font-size:clamp(32px,5vw,52px); line-height:1.15; margin:16px 0 20px; }
-.hero h1 em{ font-style:italic; color:var(--terracotta-deep); }
+.hero h1 em{ font-style:italic; color:var(--wine); }
 .hero p.lead{ font-size:16.5px; color:var(--ink-soft); max-width:50ch; margin-bottom:28px; }
 .hero .cta-row{ display:flex; gap:14px; flex-wrap:wrap; }
 .hero-figure{ position:relative; border-radius:18px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 30px 60px -20px rgba(43,36,31,0.35); }
@@ -28,64 +28,20 @@
   border-radius:16px; padding:26px; transition:transform .25s ease, box-shadow .25s ease;
 }
 .cat-card:hover{ transform:translateY(-4px); box-shadow:0 18px 40px -18px rgba(43,36,31,0.25); }
-.cat-card .num{ font-family:var(--font-display); font-size:13px; color:var(--terracotta-deep); }
+.cat-card .num{ font-family:var(--font-display); font-size:13px; color:var(--wine); }
 .cat-card h3{ font-size:21px; margin:10px 0 8px; }
 .cat-card p{ font-size:13.5px; color:var(--ink-soft); margin:0; }
-
-/* ---- Category detail sections ---- */
-.cat-section{ padding:76px 0; border-top:1px solid var(--line); }
-
-/* ---- Bride/Groom toggle ---- */
-.side-toggle{
-  display:inline-flex; background:var(--paper-deep); border:1px solid var(--line);
-  border-radius:100px; padding:4px; margin-bottom:32px;
-}
-.side-toggle button{
-  border:none; background:transparent; padding:10px 22px; border-radius:100px;
-  font-family:var(--font-body); font-size:14px; font-weight:500; cursor:pointer;
-  color:var(--ink-soft); transition:all .2s ease;
-}
-.side-toggle button.active.bride{ background:var(--bride-accent); color:#fff; }
-.side-toggle button.active.groom{ background:var(--groom-accent); color:#fff; }
-
-.side-panel{ display:none; border-radius:20px; padding:32px; border:1px solid transparent; }
-.side-panel.visible{ display:block; animation:fadeIn .4s ease; }
-@keyframes fadeIn{ from{ opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
-.side-panel.bride{ background:var(--bride-bg); border-color:var(--bride-line); }
-.side-panel.groom{ background:var(--groom-bg); border-color:var(--groom-line); }
-
-.panel-grid{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:32px; }
-@media (max-width:860px){ .panel-grid{ grid-template-columns:1fr; } }
-
-.gallery{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.gallery img{ border-radius:12px; aspect-ratio:1/1; object-fit:cover; width:100%; }
-.gallery a:first-child{ grid-row:span 2; }
-.gallery a:first-child img{ aspect-ratio:auto; height:100%; }
-
-.item-list{ list-style:none; margin:0 0 26px; padding:0; }
-.item-list li{ display:flex; align-items:baseline; gap:10px; padding:12px 0; border-bottom:1px solid rgba(43,36,31,0.08); font-size:14.5px; }
-.item-list li:last-child{ border-bottom:none; }
-.item-list li strong{ font-family:var(--font-display); font-weight:500; min-width:150px; }
-
-.panel-cta{ display:inline-flex; align-items:center; gap:8px; padding:12px 22px; border-radius:100px; text-decoration:none; font-size:14px; font-weight:500; color:#fff; }
-.panel-cta.bride{ background:var(--bride-accent-deep); }
-.panel-cta.groom{ background:var(--groom-accent-deep); }
-
-/* ---- Pandala (no bride/groom split) ---- */
-.pandala-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-.pandala-grid img{ border-radius:14px; width:100%; aspect-ratio:4/3; object-fit:cover; }
-@media (max-width:760px){ .pandala-grid{ grid-template-columns:1fr; } }
 
 /* ---- Abroad banner ---- */
 .abroad{ background:var(--ink); color:var(--paper); padding:76px 0; }
 .abroad .wrap{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px; align-items:center; }
 @media (max-width:860px){ .abroad .wrap{ grid-template-columns:1fr; } }
-.abroad .eyebrow{ color:#e0b08e; }
+.abroad .eyebrow{ color:#e2a9b4; }
 .abroad h2{ font-size:clamp(24px,4vw,34px); color:var(--paper); margin:10px 0 16px; }
 .abroad p{ color:rgba(250,246,240,0.78); font-size:15px; }
 .abroad-steps{ display:flex; flex-direction:column; gap:14px; }
 .abroad-step{ display:flex; gap:14px; padding:14px 0; border-bottom:1px solid rgba(250,246,240,0.14); }
-.abroad-step .n{ font-family:var(--font-display); font-size:19px; color:#e0b08e; min-width:28px; }
+.abroad-step .n{ font-family:var(--font-display); font-size:19px; color:#e2a9b4; min-width:28px; }
 .abroad-step h4{ font-family:var(--font-body); font-weight:600; font-size:14.5px; margin-bottom:4px; }
 .abroad-step p{ font-size:13.5px; color:rgba(250,246,240,0.7); margin:0; }
 
@@ -93,7 +49,7 @@
 .how-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-bottom:36px; }
 @media (max-width:900px){ .how-grid{ grid-template-columns:repeat(2,1fr); } }
 .how-card{ background:var(--paper-deep); border:1px solid var(--line); border-radius:16px; padding:22px; }
-.how-card .n{ font-family:var(--font-display); font-size:21px; color:var(--terracotta-deep); }
+.how-card .n{ font-family:var(--font-display); font-size:21px; color:var(--wine); }
 .how-card h4{ font-family:var(--font-body); font-weight:600; font-size:14.5px; margin:10px 0 8px; }
 .how-card p{ font-size:13px; color:var(--ink-soft); margin:0; }
 
@@ -112,7 +68,7 @@
 /* ---- FAQ ---- */
 .faq-item{ border-bottom:1px solid var(--line); }
 .faq-q{ display:flex; justify-content:space-between; align-items:center; gap:16px; padding:18px 0; cursor:pointer; font-family:var(--font-display); font-size:16.5px; }
-.faq-q .plus{ font-size:19px; color:var(--terracotta-deep); transition:transform .25s ease; flex:none; }
+.faq-q .plus{ font-size:19px; color:var(--wine); transition:transform .25s ease; flex:none; }
 .faq-item.open .plus{ transform:rotate(45deg); }
 .faq-a{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
 .faq-a p{ padding-bottom:18px; color:var(--ink-soft); font-size:14px; max-width:65ch; }
