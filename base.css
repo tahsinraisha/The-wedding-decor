@@ -1,0 +1,159 @@
+/* =====================================================
+   BASE.CSS — design tokens, resets, typography, layout
+   Edit colours/fonts here and they apply across every page.
+===================================================== */
+
+:root{
+  /* ---- Core palette (deep, premium — no gold) ---- */
+  --ink:            #211a16;   /* near-black warm ink, main text */
+  --ink-soft:       #5c5148;   /* secondary text */
+  --paper:          #faf6f0;   /* page background, off-white */
+  --paper-deep:     #f2ebe1;   /* card background */
+  --line:           rgba(43,36,31,0.14);
+
+  --terracotta:      #b5673f;  /* secondary accent */
+  --terracotta-deep: #8c4a2a;
+
+  --wine:            #6e2438;  /* primary premium accent — deep wine/maroon */
+  --wine-deep:        #521a2a;
+
+  /* ---- Bride theme ---- */
+  --bride-bg:         #fbf0f1;
+  --bride-accent:     #b1445e;
+  --bride-accent-deep:#8c2f47;
+  --bride-line:       rgba(177,68,94,0.3);
+
+  /* ---- Groom theme ---- */
+  --groom-bg:          #eaf1f7;
+  --groom-accent:      #2f6690;
+  --groom-accent-deep: #1f4a6b;
+  --groom-line:        rgba(47,102,144,0.3);
+
+  /* ---- Food sub-category themes (colourful, no gold) ---- */
+  --dessert-bg:          #fdeee8;
+  --dessert-accent:      #c1483a;
+  --dessert-accent-deep: #9c3629;
+  --dessert-line:        rgba(193,72,58,0.3);
+
+  --pithapuli-bg:          #f7ecd9;
+  --pithapuli-accent:      #a15c2e;
+  --pithapuli-accent-deep: #7c4521;
+  --pithapuli-line:        rgba(161,92,46,0.3);
+
+  --fooditems-bg:          #eaf3ec;
+  --fooditems-accent:      #2f6b52;
+  --fooditems-accent-deep: #204b39;
+  --fooditems-line:        rgba(47,107,82,0.3);
+
+  --cake-bg:          #f3ecf5;
+  --cake-accent:      #7c4a86;
+  --cake-accent-deep: #5c3566;
+  --cake-line:        rgba(124,74,134,0.3);
+
+  /* ---- Type ---- */
+  --font-display: 'Fraunces', 'Noto Serif Bengali', serif;
+  --font-body:    'Manrope', 'Noto Sans Bengali', sans-serif;
+}
+
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:
+    radial-gradient(1200px 600px at 15% -10%, rgba(110,36,56,0.05), transparent 60%),
+    radial-gradient(1000px 500px at 100% 10%, rgba(181,103,63,0.06), transparent 55%),
+    var(--paper);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-weight:500;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,.display{
+  font-family:var(--font-display);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  line-height:1.1;
+  margin:0;
+}
+h1{ font-weight:800; }
+a{ color:inherit; }
+img{ display:block; max-width:100%; }
+ul{ margin:0; }
+
+.wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+.eyebrow{
+  font-family:var(--font-body);
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  font-size:12px;
+  font-weight:700;
+  color:var(--wine);
+}
+
+/* ---- Language toggle ----
+   Default language shown: Bangla (lang-bn). English is hidden
+   until <body> gets class "show-en".
+*/
+.lang-bn{ display:inline; }
+.lang-en{ display:none; }
+body.show-en .lang-bn{ display:none; }
+body.show-en .lang-en{ display:inline; }
+
+.lang-switch{
+  display:inline-flex; background:var(--paper-deep); border:1px solid var(--line);
+  border-radius:100px; padding:3px; font-size:12px; font-weight:600;
+}
+.lang-switch button{
+  border:none; background:transparent; padding:6px 14px; border-radius:100px;
+  cursor:pointer; color:var(--ink-soft); font-family:var(--font-body);
+}
+.lang-switch button.active{ background:var(--ink); color:var(--paper); }
+
+/* ---- Betel-leaf (paan) signature motif, used as brand mark & divider ---- */
+.paan{ width:22px; height:22px; display:inline-block; vertical-align:middle; opacity:0.9; }
+.divider{ display:flex; align-items:center; gap:14px; margin:18px 0 30px; }
+.divider .rule{ height:1px; background:var(--line); flex:1; }
+
+/* ---- Buttons ---- */
+.btn-wa{
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--ink); color:var(--paper);
+  padding:13px 24px; border-radius:100px;
+  font-size:14.5px; font-weight:700; text-decoration:none;
+  transition:transform .2s ease, background .2s ease, box-shadow .2s ease;
+  border:none; cursor:pointer;
+  box-shadow:0 8px 22px -8px rgba(33,26,22,0.45);
+}
+.btn-wa:hover{ background:var(--wine); transform:translateY(-2px); box-shadow:0 14px 28px -10px rgba(110,36,56,0.5); }
+.btn-wa svg{ width:16px; height:16px; flex:none; }
+
+.btn-ghost{
+  display:inline-flex; align-items:center; gap:8px;
+  border:1.5px solid var(--line); padding:12px 24px; border-radius:100px;
+  font-size:14.5px; font-weight:700; text-decoration:none; color:var(--ink);
+  transition:border-color .2s ease;
+}
+.btn-ghost:hover{ border-color:var(--wine); color:var(--wine); }
+
+/* ---- Floating WhatsApp button (all pages) ---- */
+.float-wa{
+  position:fixed; right:20px; bottom:20px; z-index:60;
+  background:#2f7d5c; color:#fff; border-radius:100px;
+  padding:14px 20px; display:flex; align-items:center; gap:9px;
+  text-decoration:none; font-size:14px; font-weight:500;
+  box-shadow:0 10px 30px rgba(0,0,0,0.18);
+}
+.float-wa svg{ width:18px; height:18px; }
+
+/* ---- Section spacing helpers ---- */
+.section{ padding:80px 0; }
+.section-tight{ padding:60px 0; }
+.section-head{ max-width:640px; margin-bottom:36px; }
+.section-head h1, .section-head h2{ font-size:clamp(28px,4vw,38px); margin:10px 0 12px; }
+.section-head p{ color:var(--ink-soft); font-size:15.5px; }
+
+@media (max-width:760px){
+  .section{ padding:56px 0; }
+}
