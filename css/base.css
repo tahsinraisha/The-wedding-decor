@@ -29,6 +29,22 @@
   --groom-accent-deep: #1f4a6b;
   --groom-line:        rgba(47,102,144,0.3);
 
+  /* ---- Food sub-category themes (colourful, no gold) ---- */
+  --dessert-bg:          #fdeee8;
+  --dessert-accent:      #c1483a;
+  --dessert-accent-deep: #9c3629;
+  --dessert-line:        rgba(193,72,58,0.3);
+
+  --pithapuli-bg:          #f7ecd9;
+  --pithapuli-accent:      #a15c2e;
+  --pithapuli-accent-deep: #7c4521;
+  --pithapuli-line:        rgba(161,92,46,0.3);
+
+  --fooditems-bg:          #eaf3ec;
+  --fooditems-accent:      #2f6b52;
+  --fooditems-accent-deep: #204b39;
+  --fooditems-line:        rgba(47,107,82,0.3);
+
   /* ---- Type ---- */
   --font-display: 'Fraunces', 'Noto Serif Bengali', serif;
   --font-body:    'Manrope', 'Noto Sans Bengali', sans-serif;
